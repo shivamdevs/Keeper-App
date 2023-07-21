@@ -1,0 +1,49 @@
+.ls-ol {
+    display: flex;
+    flex-wrap: nowrap;
+    position: fixed;
+    inset: 0;
+    z-index: 3;
+    background-color: inherit;
+    justify-content: center;
+    align-items: center;
+    transition: 300ms;
+}
+
+.ls-ol>svg {
+    width: 100%;
+    max-width: 100px;
+    transition: 300ms;
+    aspect-ratio: 1 / 1;
+    animation: ls_ol_animate_rotate 1.25s linear infinite;
+}
+
+.ls-ol.ls-ol-fo {
+    opacity: 0;
+    visibility: hidden;
+}
+
+.ls-ol.ls-ol-fo>svg {
+    transform: scale(0);
+}
+
+@keyframes ls_ol_animate_rotate {
+
+    0%,
+    100% {
+        rotate: 0deg;
+        scale: 1
+    }
+
+    25% {
+        rotate: 5deg;
+    }
+
+    50% {
+        scale: 0.9
+    }
+
+    75% {
+        rotate: -5deg;
+    }
+}
