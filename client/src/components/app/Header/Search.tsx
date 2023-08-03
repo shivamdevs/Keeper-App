@@ -3,7 +3,7 @@ import { IoMdSearch } from 'react-icons/io';
 import { MdClear } from 'react-icons/md';
 import classNames from 'classnames';
 import RoundButton from '../../common/RoundButton';
-import HeightAnimateSection from '../../common/HeightAnimateSection';
+import HeightAnimateSection from '../../common/AnimatedSection';
 import { useToggle } from 'react-unique-hooks';
 
 function Search() {

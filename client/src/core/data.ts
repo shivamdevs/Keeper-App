@@ -1,6 +1,10 @@
 import DataType from "./types/DataType";
 import { v4 as uuid } from 'uuid';
 
+export {
+    uuid
+};
+
 const data: DataType[] = [];
 
 function randomURL() {

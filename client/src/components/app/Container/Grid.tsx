@@ -8,7 +8,7 @@ import FavIconImage from '../../common/FavIconImage';
 
 function Grid() {
     return (
-        <section className="full grid grid-cols-1 xs:grid-cols-1 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-5 pr-[6px] pl-5">
+        <section className="full grid grid-container gap-5 pr-[6px] pl-5">
             {data.map(item => <Card key={item.id} {...item} />)}
         </section>
     );

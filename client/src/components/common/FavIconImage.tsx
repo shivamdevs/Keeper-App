@@ -30,18 +30,24 @@ function FavIconImage({ link, className }: FavIconImageProps) {
             "relative overflow-hidden",
             className
         )}>
-            <AnimatePresence mode="sync" initial={false}>
+            <AnimatePresence mode="wait" initial={false}>
                 {favIcon && <motion.img
                     key={link}
                     className="relative"
                     initial={{
-                        left: "100%"
+                        scale: 0,
+                        opacity: 0,
+                        rotate: "-180deg",
                     }}
                     animate={{
-                        left: "0",
+                        scale: 1,
+                        opacity: 1,
+                        rotate: "0deg",
                     }}
                     exit={{
-                        left: "-100%"
+                        scale: 0,
+                        opacity: 0,
+                        rotate: "180deg",
                     }}
                     transition={{
                         duration: 0.2
@@ -54,13 +60,19 @@ function FavIconImage({ link, className }: FavIconImageProps) {
                 {!favIcon && <motion.span
                     key="loading"
                     initial={{
-                        left: "100%"
+                        scale: 0,
+                        opacity: 0,
+                        rotate: "-180deg",
                     }}
                     animate={{
-                        left: "0",
+                        scale: 1,
+                        opacity: 1,
+                        rotate: "0deg",
                     }}
                     exit={{
-                        left: "-100%"
+                        scale: 0,
+                        opacity: 0,
+                        rotate: "180deg",
                     }}
                     transition={{
                         duration: 0.2

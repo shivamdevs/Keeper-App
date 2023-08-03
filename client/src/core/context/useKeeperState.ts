@@ -5,12 +5,13 @@ import { useLocalStorage } from 'react-unique-hooks';
 export default function useKeeperState(): KeeperContext {
     const [setting, updateSetting] = useLocalStorage<KeeperSetting>("keeper:setting", {
         listView: false,
+        panelView: false,
     });
 
     function setSetting(key: string, value: any) {
         updateSetting((old: KeeperSetting | undefined) => ({
             ...old,
-            [key]: value,
+            [key]: typeof value === "function" ? value(old?.[key as keyof KeeperSetting]) : value,
         } as KeeperSetting));
     }
 

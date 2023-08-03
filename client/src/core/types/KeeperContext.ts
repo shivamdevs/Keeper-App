@@ -7,4 +7,5 @@ export default interface KeeperContext {
 
 export interface KeeperSetting {
     listView: boolean;
+    panelView: "help" | "profile" | "setting" | false;
 }

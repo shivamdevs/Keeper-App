@@ -1,9 +1,11 @@
 import React from 'react';
-import RoundButton from '../common/RoundButton';
+import RoundButton from '../../common/RoundButton';
 import { LuLayoutGrid, LuLayoutList } from 'react-icons/lu';
 import { BiArrowBack } from 'react-icons/bi';
-import { useKeeperContext } from '../../core/context/KeeperContext';
+import { useKeeperContext } from '../../../core/context/KeeperContext';
 import { Route, Routes, useNavigate } from 'react-router-dom';
+import { asideBar } from '../Aside';
+import PathBar from './PathBar';
 
 function NavBar() {
     const { setting: { listView }, setSetting } = useKeeperContext();
@@ -15,6 +17,9 @@ function NavBar() {
                 <Routes>
                     <Route path="/" element={null} />
                     <Route path="*" element={<RoundButton content="Back" onClick={() => navigate(-1)}><BiArrowBack /></RoundButton>} />
+                </Routes>
+                <Routes>
+                    {asideBar.map(item => ({ ...item, path: item.link.split("/keeper")[1] || "/" })).map(bar => (<Route path={bar.path} key={bar.name} element={<PathBar path={[bar]} />} />))}
                 </Routes>
                 <RoundButton className="ml-auto" content={listView ? "Grid View" : "List view"} onClick={() => { setSetting("listView", !listView) }}>
                     {listView ? <LuLayoutGrid /> : <LuLayoutList />}

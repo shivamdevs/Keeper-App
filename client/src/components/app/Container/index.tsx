@@ -12,22 +12,16 @@ function Container() {
             "w-full flex-1",
             {
                 "p-5": listView,
-                "pt-5": !listView,
+                "py-5": !listView,
             },
         )}>
             <main className={classNames(
                 "w-full h-full relative overflow-hidden",
                 {
-                    "bg-white rounded-xl shadow-xl": listView,
+                    "bg-white rounded-lg shadow-xl": listView,
                 }
             )}>
-                <article className={classNames(
-                    "absolute inset-0 overflow-x-auto overflow-y-scroll pb-10",
-                    {
-                        "f": listView,
-                        "": !listView,
-                    }
-                )}>
+                <article className="absolute inset-0 overflow-x-auto overflow-y-scroll pb-10">
                     {listView ? <Table /> : <Grid />}
                 </article>
             </main>

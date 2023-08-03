@@ -4,6 +4,7 @@ import KeeperContextType from "../types/KeeperContext";
 const KeeperContext = React.createContext<KeeperContextType>({
     setting: {
         listView: false,
+        panelView: false,
     },
     setSetting: () => {},
 });
