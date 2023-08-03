@@ -4,7 +4,7 @@
     "description": "Streamline your productivity with our task manager app.",
     "main": "dist/index.js",
     "scripts": {
-        "build": "tsc",
+        "build": "rimraf dist && tsc -w",
         "start": "node dist/index.js",
         "dev": "rimraf dist && concurrently \"tsc -w\" \"nodemon dist/index.js\""
     },
