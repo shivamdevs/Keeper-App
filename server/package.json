@@ -5,7 +5,8 @@
     "main": "dist/index.js",
     "scripts": {
         "build": "tsc",
-        "start": "rimraf dist && concurrently \"tsc -w\" \"nodemon dist/index.js\""
+        "start": "node dist/index.js",
+        "dev": "rimraf dist && concurrently \"tsc -w\" \"nodemon dist/index.js\""
     },
     "repository": {
         "type": "git",
